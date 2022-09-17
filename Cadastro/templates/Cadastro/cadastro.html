@@ -9,6 +9,27 @@
         body{
             background: linear-gradient(0deg, rgba(226,251,251,1) 0%, rgba(126,84,240,1) 100%);
         }
+        form{
+            margin-bottom: 30px;
+        }
+
+        a{
+            padding: 15px;
+            background-color: rgb(145, 88, 199);
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: Verdana;
+            font-weight: bold;
+        }
+
+        button{
+            padding: 15px;
+            background-color: plum;
+            border-radius: 8px;
+            font-family: Verdana;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -16,7 +37,7 @@
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Salvar</button>
         {% if cadastro%}
         <a href="{% url 'apagar' cadastro.id%}">Apagar</a>
         {% endif %}
